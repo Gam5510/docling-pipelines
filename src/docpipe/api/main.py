@@ -142,7 +142,11 @@ try:
         jwt_config: JWTConfig | None = JWTConfig()
         logger.info("Authentication configurations initialized successfully")
     except Exception as e:
-        logger.warning("JWT secret key not configured: %s. Login and token issuance are disabled. Set JWT_SECRET_KEY to enable authentication.", e)
+        logger.warning(
+            "JWT secret key not configured: %s. Login and token issuance "
+            "are disabled. Set JWT_SECRET_KEY to enable authentication.",
+            e,
+        )
         jwt_config = None
 
 except Exception as e:
